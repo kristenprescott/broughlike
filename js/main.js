@@ -7,6 +7,7 @@ numTiles = 9;
 uiWidth = 4;
 
 level = 1;
+maxHp = 6;
 
 // load spritesheet
 spritesheet = new Image();
