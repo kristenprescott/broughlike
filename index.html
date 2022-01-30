@@ -5,46 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href=""> -->
-    <!-- <script type="text/javascript" defer src=""></script> -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="text/javascript" src="js/game.js" defer></script>
+    <script type="text/javascript" src="js/map.js" defer></script>
+    <script type="text/javascript" src="js/tile.js" defer></script>
+    <script type="text/javascript" src="js/monster.js" defer></script>
+    <script type="text/javascript" src="js/util.js" defer></script>
+    <script type="text/javascript" src="js/spell.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
   </head>
-  <style>
-    canvas {
-      outline: 1px solid white;
-    }
-    body {
-      background-color: indigo;
-      text-align: center;
-      margin-top: 50px;
-    }
-  </style>
   <body>
     <canvas></canvas>
-
-    <script>
-      canvas = document.querySelector("canvas");
-      ctx = canvas.getContext("2d");
-
-      // init xy coords
-      x = y = 0;
-
-      // wasd instructions for movement
-      document.querySelector("html").onkeypress = function (e) {
-        if (e.key === "w") y--;
-        if (e.key === "a") x--;
-        if (e.key === "s") y++;
-        if (e.key === "d") x++;
-      };
-
-      // update canvas ctx w new coord vars
-      const draw = () => {
-        // clear character after each render
-        ctx.clearRect(0, 0, 1000, 1000);
-        // draw to canvas
-        ctx.fillRect(x * 20, y * 20, 20, 20);
-      };
-      // draw the screen every 15ms(60+fps)
-      setInterval(draw, 15);
-    </script>
   </body>
 </html>
