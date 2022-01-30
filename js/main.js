@@ -2,6 +2,7 @@
 tileSize = 64;
 // width/height of map in tiles:
 numTiles = 9;
+// numTiles = 13;
 // space for game ui:
 uiWidth = 4;
 
@@ -30,6 +31,13 @@ document.querySelector("html").addEventListener("keydown", (e) => {
 });
 
 // draw the screen every 15ms(60+fps)
-setInterval(game.draw, 15);
+setInterval(draw, 15);
 
-game.setupCanvas();
+setupCanvas();
+
+generateLevel();
+
+// start player on random floor tile
+startingTile = randomPassableTile();
+x = startingTile.x;
+y = startingTile.y;
