@@ -1,0 +1,8 @@
+canvas {
+  outline: 1px solid white;
+}
+body {
+  background-color: indigo;
+  text-align: center;
+  margin-top: 50px;
+}
