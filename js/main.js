@@ -6,8 +6,7 @@ numTiles = 9;
 // space for game ui:
 uiWidth = 4;
 
-// init xy coords
-x = y = 0;
+level = 1;
 
 // load spritesheet
 spritesheet = new Image();
@@ -16,18 +15,18 @@ spritesheet.src = "./imgs/spritesheet.png";
 // wasd instructions for movement
 document.querySelector("html").addEventListener("keypress", (e) => {
   e = e || window.event;
-  if (e.key === "w") y--;
-  if (e.key === "a") x--;
-  if (e.key === "s") y++;
-  if (e.key === "d") x++;
+  if (e.key === "w") player.tryMove(0, -1);
+  if (e.key === "a") player.tryMove(-1, 0);
+  if (e.key === "s") player.tryMove(0, 1);
+  if (e.key === "d") player.tryMove(1, 0);
 });
 // for using arrows:
 document.querySelector("html").addEventListener("keydown", (e) => {
   e = e || window.event;
-  if (e.key === "ArrowUp") y--;
-  if (e.key === "ArrowDown") y++;
-  if (e.key === "ArrowLeft") x--;
-  if (e.key === "ArrowRight") x++;
+  if (e.key === "ArrowUp") player.tryMove(0, -1);
+  if (e.key === "ArrowDown") player.tryMove(0, 1);
+  if (e.key === "ArrowLeft") player.tryMove(-1, 0);
+  if (e.key === "ArrowRight") player.tryMove(1, 0);
 });
 
 // draw the screen every 15ms(60+fps)
@@ -38,6 +37,4 @@ setupCanvas();
 generateLevel();
 
 // start player on random floor tile
-startingTile = randomPassableTile();
-x = startingTile.x;
-y = startingTile.y;
+player = new Player(randomPassableTile());
