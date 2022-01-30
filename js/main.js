@@ -29,14 +29,7 @@ document.querySelector("html").addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") x++;
 });
 
-// update canvas ctx w new coord vars
-const draw = () => {
-  // clear character after each render
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // draw sprite
-  ctx.drawImage(spritesheet, x * tileSize, y * tileSize);
-};
 // draw the screen every 15ms(60+fps)
-setInterval(draw, 15);
+setInterval(game.draw, 15);
 
 game.setupCanvas();
